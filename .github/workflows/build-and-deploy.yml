@@ -11,23 +11,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Cache texlive Docker image
-        uses: actions/cache@v3
-        id: docker-cache
-        with:
-          path: /tmp/texlive-docker.tar
-          key: texlive-full-2025 # bump this string if you want a fresh pull
-
-      - name: Load cached Docker image
-        if: steps.docker-cache.outputs.cache-hit == 'true'
-        run: docker load -i /tmp/texlive-docker.tar
-
-      - name: Pull and save Docker image
-        if: steps.docker-cache.outputs.cache-hit != 'true'
-        run: |
-          docker pull ghcr.io/xu-cheng/texlive-full:latest
-          docker save ghcr.io/xu-cheng/texlive-full:latest -o /tmp/texlive-docker.tar
-
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
