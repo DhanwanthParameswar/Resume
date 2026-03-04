@@ -2,25 +2,27 @@ name: Build and Deploy Resume
 
 on:
   push:
-    branches: [main] # Triggers the action when you push to the main branch
+    branches: [main]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Grab your repository code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Compile the LaTeX file into a PDF
-      - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: resume.tex
-          latexmk_use_lualatex: true
-          # This automatically generates resume.pdf
+      - name: Install LaTeX packages
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-luatex
 
-      # 3. Deploy everything in the root directory to Netlify
+      - name: Compile LaTeX
+        run: latexmk -lualatex -file-line-error -halt-on-error -interaction=nonstopmode resume.tex
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
