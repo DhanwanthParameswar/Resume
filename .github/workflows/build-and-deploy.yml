@@ -11,17 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install LaTeX packages
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive-latex-base \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-luatex
-
       - name: Compile LaTeX
-        run: latexmk -lualatex -file-line-error -halt-on-error -interaction=nonstopmode resume.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          latexmk_use_lualatex: true
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
