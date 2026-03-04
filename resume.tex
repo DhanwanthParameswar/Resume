@@ -1,0 +1,197 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+% Adapted for LuaLaTeX
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor} % Switched to xcolor for better color management
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontspec} % Use fontspec for font selection with LuaLaTeX
+
+%----------FONT OPTIONS----------
+% With LuaLaTeX, you can use any font installed on your system (or available in Overleaf).
+% Examples:
+% \setmainfont{Fira Sans}
+% \setmainfont{Roboto}
+% \setmainfont{Source Sans Pro}
+% \setmainfont{Charter}
+% \setmainfont{Cormorant Garamond}
+\setmainfont{Inter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge  Dhanwanth Parameswar} \\ \vspace{1pt}
+    \small \href{tel:5853090993}{\underline{585-309-0993}} $|$ \href{mailto:im@dhanwanth.com}{\underline{im@dhanwanth.com}} $|$ 
+    \href{https://linkedin.com/in/dhanwanthp}{\underline{linkedin.com/in/dhanwanthp}} $|$
+    \href{https://github.com/dhanwanthdarameswar}{\underline{github.com/dhanwanthparameswar}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University at Buffalo}{Buffalo, NY}
+      {Bachelor of Science in Computer Engineering, Honors College Scholar}{Expected May 2028}
+        \resumeItemListStart
+        \resumeItem{Relevant Coursework: Intro to Computer Science II (CSE 116), Intro to Discrete Structures (CSE 191)}
+      \resumeItemListEnd
+    % \resumeSubheading
+    %   {Pittsford Mendon High School}{Pittsford, NY}
+    %   {High Honor Roll, NHS, AP Scholar with Distinction}{June 2025}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Audio Plugin Developer}{April 2023 -- Present}
+      {NEST Acoustics}{}
+      \resumeItemListStart
+        \resumeItem{Engineering VST audio plugin software using HISE/JUCE for a virtual instrument company, enabling users to play and manipulate audio samples.}
+        \resumeItem{Collaborated with the founder to define product specifications and user interface requirements.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Research Intern - AI/Machine Learning}{May 2024 -- October 2024}
+      {Rochester Institute of Technology}{Rochester, NY}
+      \resumeItemListStart
+        \resumeItem{Worked under the guidance of Professor Haibo Yang to explore federated learning networks and practical AI applications.}
+        \resumeItem{Developed an in-browser AI image classifier using TensorFlow.js, leveraging a MobileNetV3 base model with a custom head trained on the Caltech 256 dataset.}
+        \resumeItem{Engineered the user interface with React and Tailwind CSS, utilizing the Filepond library for robust image input.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Swim Instructor/Lifeguard}{March 2024 -- June 2025}
+      {YMCA of Rochester}{Pittsford, NY}
+      \resumeItemListStart
+        \resumeItem{Ensured safety for dozens of swimmers in a high-traffic pool environment while instructing children in fundamental and competitive swimming techniques.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Library Management System} $|$ \emph{PHP, JavaScript, MySQL, HTML, CSS}}{September 2023 -- May 2024}
+            \resumeItemListStart
+              \resumeItem{Engineered a full-stack web application to digitize a physical inventory of 1,000+ volumes, serving a community of $\sim$150 members.}
+              \resumeItem{Reduced book return processing time by $\sim$95\% (from 5 mins to $<$15 seconds) by implementing indexed database queries to replace manual logbook searching.}
+              \resumeItem{Streamlined asset tracking for 200+ loan transactions, eliminating manual clerical errors and ensuring data integrity for lost item tracking.}
+            \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Droppua} $|$ \emph{JavaScript, PHP, Docker, MySQL}}{June 2024 -- July 2024}
+          \resumeItemListStart
+            \resumeItem{Engineered a real-time web application for seamless text and file sharing across devices without page reloads.}
+            \resumeItem{Utilized Server-Sent Events (SSE) with a PHP backend to efficiently stream data from a MySQL database to the client.}
+            \resumeItem{Designed an intuitive user interface and developed an iOS Shortcut integration to maximize ease of use.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Non-Profit Website} $|$ \emph{WordPress}}{July 2023 -- September 2023}
+          \resumeItemListStart
+            \resumeItem{Developed and deployed a public-facing WordPress site for GramNY, a local nonprofit, to enhance their online presence and attract new members.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, C/C++, PHP, SQL, JavaScript/TypeScript, HTML/CSS} \\
+     \textbf{Technologies}{: React, Tailwind CSS, Node.js, TensorFlow.js, HISE/JUCE, WordPress, Git, Docker, OCI, GCP}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
