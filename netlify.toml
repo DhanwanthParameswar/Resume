@@ -3,6 +3,11 @@
   [headers.values]
     Content-Disposition = "inline; filename=\"Dhanwanth's Resume.pdf\""
 
+[[headers]]
+  for = "/"
+  [headers.values]
+    Content-Disposition = "inline; filename=\"Dhanwanth's Resume.pdf\""
+
 [[redirects]]
   from = "/"
   to = "/resume.pdf"
