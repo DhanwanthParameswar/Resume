@@ -1,0 +1,3 @@
+[[headers]] for = "/resume.pdf" [headers.values] Content-Disposition = "inline;
+filename=\"Dhanwanth's Resume.pdf\"" [[redirects]] from = "/" to = "/resume.pdf"
+status = 200
